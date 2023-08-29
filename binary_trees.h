@@ -6,8 +6,7 @@
 #include <string.h>
 #include <stdio.h>
 
-
-/* DATA STRUCTURES*/
+/* DATA STRUCTURES */
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -30,20 +29,30 @@ typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
 /* Queue structure for level-order traversal */
+
+/**
+ * struct queue_node - A node in a queue for binary tree traversal.
+ * @node: Reference to a binary tree node.
+ * @next: Pointer to the next node in the queue.
+ */
 typedef struct queue_node
 {
 	const binary_tree_t *node;
 	struct queue_node *next;
 } queue_node_t;
 
-typedef struct
+/**
+ * struct queue_s - A queue data structure for binary tree traversal.
+ * @front: Pointer to the front (head) node of the queue.
+ * @rear: Pointer to the rear (tail) node of the queue.
+ */
+typedef struct queue_s
 {
 	queue_node_t *front;
 	queue_node_t *rear;
 } queue_t;
 
-
-/* mandatory function prototypes*/
+/* Mandatory function prototypes */
 void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
@@ -65,14 +74,12 @@ int binary_tree_is_perfect(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
-
-
-/* Advanced tasks prototypes*/
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
+/* Advanced tasks prototypes */
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+									 const binary_tree_t *second);
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
-
-/* aux function prototypes*/
+/* Aux function prototypes */
 void enqueue(queue_t *queue, const binary_tree_t *node);
 const binary_tree_t *dequeue(queue_t *queue);
 
