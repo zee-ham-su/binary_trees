@@ -18,12 +18,6 @@ return (0);
 int left_height = binary_tree_height(tree->left);
 int right_height = binary_tree_height(tree->right);
 
-if (tree->left == NULL && tree->right == NULL)
-return (1);
-
-if (tree->left == NULL || tree->right == NULL)
-return (0);
-
 if (left_height != right_height)
 return (0);
 
