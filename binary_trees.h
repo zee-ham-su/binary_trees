@@ -28,29 +28,6 @@ typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
-/* Queue structure for level-order traversal */
-
-/**
- * struct queue_node - A node in a queue for binary tree traversal.
- * @node: Reference to a binary tree node.
- * @next: Pointer to the next node in the queue.
- */
-typedef struct queue_node
-{
-	const binary_tree_t *node;
-	struct queue_node *next;
-} queue_node_t;
-
-/**
- * struct queue_s - A queue data structure for binary tree traversal.
- * @front: Pointer to the front (head) node of the queue.
- * @rear: Pointer to the rear (tail) node of the queue.
- */
-typedef struct queue_s
-{
-	queue_node_t *front;
-	queue_node_t *rear;
-} queue_t;
 
 /* Mandatory function prototypes */
 void binary_tree_print(const binary_tree_t *);
@@ -80,7 +57,6 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
 /* Aux function prototypes */
-void enqueue(queue_t *queue, const binary_tree_t *node);
-const binary_tree_t *dequeue(queue_t *queue);
+void traverse_level(const binary_tree_t *tree, void (*func)(int), size_t target_level);
 
 #endif /* _BINARY_TREES_H_ */
