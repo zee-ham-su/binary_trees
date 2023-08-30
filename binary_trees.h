@@ -58,10 +58,13 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+int binary_tree_is_bst(const binary_tree_t *tree);
 
-/* Aux function prototypes */
+
+	/* Aux function prototypes */
 void traverse_level(const binary_tree_t *tree, void (*func)(int), size_t target_level);
 int is_complete_recursive(const binary_tree_t *tree,
-									  size_t index, size_t node_count);
+								  size_t index, size_t node_count);
+int is_bst_recurs(const binary_tree_t *node, const binary_tree_t *min, const binary_tree_t *max);
 
 #endif /* _BINARY_TREES_H_ */
