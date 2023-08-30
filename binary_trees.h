@@ -70,4 +70,8 @@ int is_complete_recursive(const binary_tree_t *tree,
 								  size_t index, size_t node_count);
 int is_bst_recurs(const binary_tree_t *node, const binary_tree_t *min, const binary_tree_t *max);
 bst_t *bst_min(bst_t *node);
+bst_t *bst_remove_recur(bst_t *tree_root, bst_t *current_node, int value);
+bst_t *del_bst_node(bst_t *tree_root, bst_t *node_to_delete);
+bst_t *min_node(bst_t *subtree_root);
+
 #endif /* _BINARY_TREES_H_ */
