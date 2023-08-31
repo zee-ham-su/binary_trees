@@ -49,6 +49,7 @@ return (results);
 avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
 avl_t **new_node_ptr, int value)
 {
+int balance_factor = get_balance_factor(*tree);
 if (*tree == NULL)
 {
 *new_node_ptr = binary_tree_node(parent, value);
