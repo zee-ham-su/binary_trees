@@ -14,8 +14,8 @@ size_t left_height = 0;
 size_t right_height = 0;
 if (node != NULL)
 {
-left_height = node->left ? 1 + get_tree_height(node->left) : 1;
-right_height = node->right ? 1 + get_tree_height(node->right) : 1;
+left_height = node->left ? 1 + binary_tree_height(node->left) : 1;
+right_height = node->right ? 1 + binary_tree_height(node->right) : 1;
 return ((left_height > right_height) ? left_height : right_height);
 }
 return (0);
