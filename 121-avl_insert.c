@@ -110,9 +110,9 @@ return (*tree);
 avl_t *avl_insert(avl_t **tree, int value)
 {
 avl_t *new_node;
+new_node = NULL;
 if (tree == NULL)
 return (NULL);
-new_node = NULL;
 
 if (*tree == NULL)
 {
