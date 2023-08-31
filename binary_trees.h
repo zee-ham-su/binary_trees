@@ -67,6 +67,8 @@ int binary_tree_is_avl(const binary_tree_t *tree);
 avl_t *avl_insert(avl_t **tree, int value);
 avl_t *array_to_avl(int *array, size_t size);
 avl_t *avl_remove(avl_t *root, int value);
+avl_t *sorted_array_to_avl(int *array, size_t size);
+
 
 /* Aux function prototypes */
 void traverse_level(const binary_tree_t *tree, void (*func)(int), size_t target_level);
@@ -86,4 +88,7 @@ bst_t *remove_bst_node(bst_t *root, int value);
 int remove_node_type(bst_t *node);
 int find_successor(bst_t *node);
 void balance_tree(avl_t **tree);
+void create_tree(avl_t **node, int *array, size_t size, int mode);
+
+
 #endif /* _BINARY_TREES_H_ */
